@@ -1,0 +1,7 @@
+# mysql example
+[client]
+database = dbname
+user = username
+password = password
+default-character-set = utf8
+host = localhost

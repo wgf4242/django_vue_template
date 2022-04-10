@@ -1,0 +1,6 @@
+djangorestframework-simplejwt==5.1.0
+django-comment-migrate==0.1.5
+mysqlclient==2.1.0
+django-cors-headers==3.11.0
+django-filter==21.1
+django-typomatic==1.6.1
