@@ -4,7 +4,8 @@ create.bat
 # backend
 **/.idea
 **/db.sqlite3
-**/migrations/
+**/migrations/*
+!**/migrations/__init__.py
 **/__pycache__/
 backend/src/**.xls*
 backend/src/assets
