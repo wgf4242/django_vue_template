@@ -4,6 +4,10 @@ Django + Vue3 Project Template
 ```bash
 1. vi /etc/nginx/nginx.conf
 修改 user nginx; -> user root;
+2. pip3 install uwsgi
+ln -sf /usr/local/python-3.10.0/bin/uwsgi /usr/bin/uwsgi
+
+
 ```
 
 # Deploy
