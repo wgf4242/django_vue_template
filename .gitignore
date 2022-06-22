@@ -34,6 +34,9 @@ backend/**/token.json
 package-lock.json
 pnpm-lock.yaml
 
+# Vite
+components.d.ts
+
 # Hbuilder
 .hbuilderx
 uni_modules

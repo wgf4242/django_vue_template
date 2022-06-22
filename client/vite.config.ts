@@ -35,7 +35,8 @@ function getPlugins() {
     return [
         vue(),
         Components({
-            resolvers: [AntDesignVueResolver()]
+            resolvers: [AntDesignVueResolver()] 
+            // resolvers: [VantResolver()] // 注意：VantResolver会把css打包进去
             // dirs: ["src/components"], // 要导入组件的目录的相对路径
             //   deep: true, // 搜索子目录
             //   dts: "src/components/components.d.ts", // 生成 `components.d.ts` 全局声明
@@ -56,6 +57,7 @@ function build() {
             plugins: [
                 externalGlobals({
                     vue: 'Vue',
+                    // 'vant': 'vant',
                     'exceljs': 'ExcelJS',
                     "ant-design-vue": "antd",
                 }),
