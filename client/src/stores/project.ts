@@ -6,7 +6,7 @@ import {defineStore} from 'pinia'
 // }
 export const useProjectStore = defineStore('project', {
     state: () => {
-        return {project: {}, team: {}, user:{} } as any;
+        return {project: {}, team: {}, user:{} };
     },
     // could also be defined as
     // state: () => ({ count: 0 })

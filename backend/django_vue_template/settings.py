@@ -191,3 +191,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, STATIC_DIR)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DCM_COMMENT_KEY='verbose_name'
