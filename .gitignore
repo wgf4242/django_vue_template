@@ -11,6 +11,7 @@ create.bat
 backend/src/**.xls*
 backend/src/assets
 backend/staticsites
+backend/media/
 backend/assets/
 backend/images/
 backend/venv/
