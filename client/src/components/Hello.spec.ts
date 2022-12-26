@@ -5,5 +5,10 @@ import {mount} from '@vue/test-utils';
 
 test("hello", () => {
   console.log(Hello);
-  mount(Hello)
+  const wrapper = mount(Hello);
+  expect(wrapper.text()).toContain("Hello")
+
+  // input ouput
+  // api
+  
 })
