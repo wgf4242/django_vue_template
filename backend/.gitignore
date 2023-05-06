@@ -1,2 +1,16 @@
 my.cnf
 utils/output.ts
+
+**/.idea
+**/db.sqlite3
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+**/__pycache__/
+src/**.xls*
+src/assets
+staticsites
+media/
+assets/
+images/
+venv/
