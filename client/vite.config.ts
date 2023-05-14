@@ -11,7 +11,8 @@ import path from "path"
 // import {AntDesignVueResolver} from 'unplugin-vue-components/resolvers'
 // import externalGlobals from 'rollup-plugin-external-globals'
 // import {terser} from 'rollup-plugin-terser';
-import { vitestConfig } from "./vitestConfig"
+// @ts-ignore
+import { vitestConfig } from "./vitestConfig.ts"
 // 上一行 如果报错 在tsconfig.node.json中includes配置
 
 export default defineConfig({
@@ -39,55 +40,55 @@ export default defineConfig({
   // build: build()
 })
 
-function getPlugins() {
-  return [
-    vue(),
-    Components({
-      resolvers: [AntDesignVueResolver()],
-      // resolvers: [VantResolver()] // 注意：VantResolver会把css打包进去
-      // dirs: ["src/components"], // 要导入组件的目录的相对路径
-      //   deep: true, // 搜索子目录
-      //   dts: "src/components/components.d.ts", // 生成 `components.d.ts` 全局声明
-    }),
-    AutoImport({
-      imports: ["vue"], // 自动导入vue和vue-router相关函数
-      // imports: ['vue', 'vue-router', 'vue-i18n', '@vueuse/head', '@vueuse/core'],
-      resolvers: [AntDesignVueResolver()],
-      dts: "src/auto-import.d.ts", // 生成 `auto-import.d.ts` 全局声明
-    }),
-  ]
-}
-
-function build() {
-  return {
-    rollupOptions: {
-      external: ["vue", "exceljs", "ant-design-vue"],
-      plugins: [
-        externalGlobals({
-          vue: "Vue",
-          // 'vant': 'vant',
-          exceljs: "ExcelJS",
-          "ant-design-vue": "antd",
-        }),
-        terser({
-          compress: {
-            defaults: true,
-            drop_console: false,
-          },
-          mangle: {
-            eval: true,
-            module: true,
-            toplevel: true,
-            safari10: true,
-            properties: false,
-          },
-          output: {
-            comments: false,
-            // ecma: '2020'
-            ecma: 2020,
-          },
-        }),
-      ],
-    },
-  }
-}
+// function getPlugins() {
+//   return [
+//     vue(),
+//     Components({
+//       resolvers: [AntDesignVueResolver()],
+//       // resolvers: [VantResolver()] // 注意：VantResolver会把css打包进去
+//       // dirs: ["src/components"], // 要导入组件的目录的相对路径
+//       //   deep: true, // 搜索子目录
+//       //   dts: "src/components/components.d.ts", // 生成 `components.d.ts` 全局声明
+//     }),
+//     AutoImport({
+//       imports: ["vue"], // 自动导入vue和vue-router相关函数
+//       // imports: ['vue', 'vue-router', 'vue-i18n', '@vueuse/head', '@vueuse/core'],
+//       resolvers: [AntDesignVueResolver()],
+//       dts: "src/auto-import.d.ts", // 生成 `auto-import.d.ts` 全局声明
+//     }),
+//   ]
+// }
+//
+// function build() {
+//   return {
+//     rollupOptions: {
+//       external: ["vue", "exceljs", "ant-design-vue"],
+//       plugins: [
+//         externalGlobals({
+//           vue: "Vue",
+//           // 'vant': 'vant',
+//           exceljs: "ExcelJS",
+//           "ant-design-vue": "antd",
+//         }),
+//         terser({
+//           compress: {
+//             defaults: true,
+//             drop_console: false,
+//           },
+//           mangle: {
+//             eval: true,
+//             module: true,
+//             toplevel: true,
+//             safari10: true,
+//             properties: false,
+//           },
+//           output: {
+//             comments: false,
+//             // ecma: '2020'
+//             ecma: 2020,
+//           },
+//         }),
+//       ],
+//     },
+//   }
+// }

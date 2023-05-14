@@ -4,7 +4,7 @@ import App from './App.vue'
 
 import './utils/request'
 import router from "./router";
-import './styles.css';
+import './style.css';
 
 
 createApp(App).use(router).use(createPinia()).mount('#app')
