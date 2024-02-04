@@ -1,4 +1,4 @@
-djangorestframework-simplejwt==5.1.0
+djangorestframework-simplejwt==5.3.1
 django-comment-migrate==0.1.5
 mysqlclient==2.1.0
 django-cors-headers==3.11.0

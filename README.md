@@ -1,4 +1,9 @@
 Django + Vue3 Project Template
+# 数据库配置
+## Mysql配置
+copy backend\django_vue_template\my.cnf.bak backend\django_vue_template\my.cnf
+修改 my.cnf
+修改 backend\django_vue_template 99行取消注释
 
 # Deploy init
 ```bash
