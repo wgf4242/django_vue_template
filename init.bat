@@ -29,11 +29,13 @@ echo 已经创建管理员账号 admin/pass
 
 Pushd %~dp0
 cd client
+call npm config set registry "https://registry.npmmirror.com"
 call npm install -g pnpm
 call pnpm i
 popd 
 
 
+echo 已完成初始化，运行run.bat启动程序
 goto :EOF
 
 
