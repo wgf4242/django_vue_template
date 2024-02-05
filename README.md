@@ -1,4 +1,7 @@
 Django + Vue3 Project Template
+# Env
+Python 3.10.3
+
 # 数据库配置
 ## Mysql配置
 copy backend\django_vue_template\my.cnf.bak backend\django_vue_template\my.cnf
