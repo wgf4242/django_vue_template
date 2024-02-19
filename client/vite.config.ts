@@ -27,6 +27,11 @@ export default defineConfig({
         target: "http://127.0.0.1:8000/",
         changeOrigin: true,
       },
+      // "/api": { // mockData, 访问的实际是 public/mock // axios.get('/api/data.json').then(res => console.log(res.data))
+      //     target: "http://localhost:5174/",
+      //     changeOrigin: true,
+      //     rewrite: (path) => path.replace(/^\/api/, '/mock'),
+      // },
     },
   },
   resolve: {
