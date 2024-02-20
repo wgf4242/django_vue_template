@@ -20,9 +20,13 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
 
+from apps.examples import views as examples_views
 from apps.user.views import current_user
 
 router = DefaultRouter()
+router.register(r'books', examples_views.BookViewSet)
+router.register(r'books1', examples_views.BookViewSetExample, basename='books1')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
