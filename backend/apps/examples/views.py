@@ -1,5 +1,6 @@
 from . import models
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
 from .serializers import BookSerializer
 from . import serializers
@@ -47,7 +48,6 @@ class BookViewSetExample(ModelViewSet):
             all_books = self.queryset
             random_books = random.sample(list(all_books), 20)
 
-
         def filter():
             # 过滤
             self.queryset.filter(id=1)
@@ -65,3 +65,38 @@ class BookViewSetExample(ModelViewSet):
         qs = super().get_queryset()
         # qs_id1 = qs.filter(id=1)
         return qs
+
+    @action(methods=['post'], detail=False)
+    def import_excel(self, request):
+        params = request.POST or request.data
+        confirm = params.get('confirm')
+        return Response({'msg': 'done', 'count': 0})
+
+
+# Function based views
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+@api_view(['GET', 'POST'])
+def hello_world(request):
+    if request.method == 'POST':
+        return Response({"message": "Got some data!", "data": request.data})
+    return Response({"message": "Hello, world!"})
+
+
+# Policy decorators: https://www.django-rest-framework.org/api-guide/views/#api-policy-decorators
+from rest_framework.decorators import api_view, permission_classes, renderer_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])  # policy decorator
+@renderer_classes([JSONRenderer])  # policy decorator
+def items_not_done(request):
+    book_count = models.Book.objects.count()
+    content = {'count': book_count}
+
+    return Response(content)
