@@ -14,6 +14,9 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 import { vitestConfig } from "./vitestConfig.ts"
 // 上一行 如果报错 在tsconfig.node.json中includes配置
 
+// import postCssPxToRem from 'postcss-pxtorem' // pnpm i postcss-pxtorem -D
+
+
 export default defineConfig({
   test: {
     ...vitestConfig,
@@ -42,6 +45,17 @@ export default defineConfig({
   plugins: [vueJsx(), vue()],
   // plugins: getPlugins(),
   // build: build()
+
+  // css: {
+  //     postcss:{
+  //         plugins:[
+  //             postCssPxToRem({
+  //                 rootValue:120,
+  //                 propList:['*'],
+  //             })
+  //         ]
+  //     }
+  // }
 })
 
 // function getPlugins() {
