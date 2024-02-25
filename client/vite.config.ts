@@ -23,12 +23,13 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/media': 'http://127.0.0.1:8000/',
-      "/static": "http://127.0.0.1:8000/",
-      "/api": {
-        target: "http://127.0.0.1:8000/",
-        changeOrigin: true,
-      },
+      '/media': 'http://127.0.0.1:8000',
+      "/static": "http://127.0.0.1:8000",
+      '/api': 'http://127.0.0.1:8000',
+      // "/api": {
+      //   target: "http://127.0.0.1:8000/",
+      //   changeOrigin: true,
+      // },
       // "/api": { // mockData, 访问的实际是 public/mock // axios.get('/api/data.json').then(res => console.log(res.data))
       //     target: "http://localhost:5174/",
       //     changeOrigin: true,
