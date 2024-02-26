@@ -24,9 +24,10 @@
 
 <script lang="ts">
 // import {useCounterStore} from '@/stores/counter'
+import type {Ref} from 'vue';
+import {computed, defineComponent, ref} from "vue";
 import {storeToRefs} from "pinia";
-import {computed, defineComponent, Ref, ref} from "vue";
-import {watchAction, watchCounterAction, watchCounterStore} from "@/views/home/piniaUtil.js";
+import {watchCounterAction, watchCounterStore} from "@/views/home/piniaUtil.js";
 import {useCounterStore} from "@/stores/counter";
 
 export default  defineComponent({
