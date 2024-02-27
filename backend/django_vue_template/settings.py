@@ -135,7 +135,7 @@ TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False  # 为True时TIME_ZONE失效 使用 TimeZone时数据库保存的是 UTC时间
 
 
 # Static files (CSS, JavaScript, Images)
