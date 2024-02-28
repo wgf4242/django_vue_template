@@ -7,5 +7,5 @@ import router from "./router";
 import './style.css';
 
 
-createApp(App).use(router).use(createPinia()).mount('#app')
+createApp(App).use(createPinia()).use(router).mount('#app')
 
