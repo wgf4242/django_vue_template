@@ -12,6 +12,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 // import {terser} from 'rollup-plugin-terser';
 // @ts-ignore
 import { vitestConfig } from "./vitestConfig.ts"
+import VueDevTools from 'vite-plugin-vue-devtools'
 // 上一行 如果报错 在tsconfig.node.json中includes配置
 
 // import postCssPxToRem from 'postcss-pxtorem' // pnpm i postcss-pxtorem -D
@@ -43,7 +44,7 @@ export default defineConfig({
       // "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  plugins: [vueJsx(), vue()],
+  plugins: [vueJsx(), vue(), VueDevTools()],
   // plugins: getPlugins(),
   // build: build()
 
