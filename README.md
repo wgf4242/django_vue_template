@@ -1,3 +1,5 @@
+登录后设置一次Header就行了，会一直存在，不弄每次请求设置
+
 Django + Vue3 Project Template
 # Env
 Python 3.10.3
